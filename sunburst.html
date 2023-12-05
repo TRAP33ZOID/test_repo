@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Sunburst Chart</title>
+    <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-sunburst.min.js"></script>
+    <style type="text/css">      
+      html, body, #container { 
+        width: 100%; 
+        height: 100%; 
+        margin: 0; 
+        padding: 0; 
+      } 
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      anychart.onDocumentReady(function(){
+        // create the data
+        var data = [
+          {
+            name: "World", value: 115, children: [
+              {
+                name: "Europe", value: 87, children: [
+                  {
+                    name: "England", value: 53, children: [
+                      { name: "Alec Guinness", value: 1 },
+                      { name: "Ben Kingsley", value: 1 },
+                      { name: "Charles Laughton", value: 2 },
+                      { name: "Colin Firth", value: 1 },
+                      { name: "Daniel Day-Lewis", value: 3 },
+                      { name: "Daniel Kaluuya", value: 1 },
+                      { name: "David Niven", value: 1 },
+                      { name: "Donald Crisp", value: 1 },
+                      { name: "Eddie Redmayne", value: 1 },
+                      { name: "Edmund Gwenn", value: 1 },
+                      { name: "Elizabeth Taylor", value: 2 },
+                      { name: "Emma Thompson", value: 1 },
+                      { name: "Gary Oldman", value: 1 },
+                      { name: "George Arliss", value: 2 },
+                      { name: "Glenda Jackson", value: 2 },
+                      { name: "Greer Garson", value: 1 },
+                      { name: "Helen Mirren", value: 1 },
+                      { name: "Jeremy Irons", value: 1 },
+                      { name: "Jessica Tandy", value: 1 },
+                      { name: "Jim Broadbent", value: 1 },
+                      { name: "John Gielgud", value: 1 },
+                      { name: "John Mills", value: 1 },
+                      { name: "Judi Dench", value: 1 },
+                      { name: "Julie Andrews", value: 1 },
+                      { name: "Kate Winslet", value: 1 },
+                      { name: "Laurence Olivier", value: 1 },
+                      { name: "Maggie Smith", value: 3 },
+                      { name: "Margaret Rutherford", value: 1 },
+                      { name: "Mark Rylance", value: 1 },
+                      { name: "Michael Caine", value: 2 },
+                      { name: "Olivia Colman", value: 1 },
+                      { name: "Paul Scofield", value: 1 },
+                      { name: "Peggy Ashcroft", value: 1 },
+                      { name: "Peter Finch", value: 1 },
+                      { name: "Peter Ustinov", value: 2 },
+                      { name: "Rachel Weisz", value: 1 },
+                      { name: "Rex Harrison", value: 1 },
+                      { name: "Robert Donat", value: 1 },
+                      { name: "Ronald Colman", value: 1 },
+                      { name: "Tilda Swinton", value: 1 },
+                      { name: "Vanessa Redgrave", value: 1 },
+                      { name: "Victor McLaglen", value: 1 },
+                      { name: "Wendy Hiller", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Austria", value: 3, children: [
+                      { name: "Christoph Waltz", value: 1 },
+                      { name: "Joseph Schildkraut", value: 1 },
+                      { name: "Maximillian Schell", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Wales", value: 6, children: [
+                      { name: "Ray Milland", value: 1 },
+                      { name: "Hugh Griffith", value: 1 },
+                      { name: "Catherine Zeta-Jones", value: 2 },
+                      { name: "Anthony Hopkins", value: 2 }
+                    ]
+                  },
+                  {
+                    name: "France", value: 4, children: [
+                      { name: "Claudette Colbert", value: 1 },
+                      { name: "Jean Dujardin", value: 1 },
+                      { name: "Juliette Binoche", value: 1 },
+                      { name: "Marion Cotillard", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Italy", value: 3, children: [
+                      { name: "Anna Magnani", value: 1 },
+                      { name: "Roberto Benigni", value: 1 },
+                      { name: "Sophia Loren", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Russia", value: 3, children: [
+                      { name: "George Sanders", value: 1 },
+                      { name: "Lila Kedrova", value: 1 },
+                      { name: "Yul Brynner", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Germany", value: 2, children: [
+                      { name: "Luise Rainier", value: 1 },
+                      { name: "Simone Signoret", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Ireland", value: 2, children: [
+                      { name: "Barry Fitzgerald", value: 1 },
+                      { name: "Brenda Flicker", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Spain", value: 2, children: [
+                      { name: "Javier Bardem", value: 1 },
+                      { name: "Penélope Cruz", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Sweden", value: 2, children: [
+                      { name: "Alicia Vikander", value: 1 },
+                      { name: "Ingrid Bergman", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Belgium", value: 1, children: [
+                      { name: "Audrey Hepburn", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Greece", value: 1, children: [
+                      { name: "Katina Paxinou", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Hungary", value: 1, children: [
+                      { name: "Paul Lukas", value: 1 }
+                    ]
+                  },
+            {
+                    name: "Romania", value: 1, children: [
+                      { name: "John Houseman", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Scotland", value: 1, children: [
+                      { name: "Sean Connery", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Switzerland", value: 1, children: [
+                      { name: "Emil Jannings", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Ukraine", value: 1, children: [
+                      { name: "Paul Muni", value: 1 }
+                    ]
+                  }
+                ]
+              },
+              {
+                name: "America", value: 14, children: [
+                  {
+                    name: "Canada", value: 11, children: [
+                      { name: "Anna Paquin", value: 1 },
+                      { name: "Christopher Plumme", value: 2 },
+                      { name: "Harold Russell", value: 1 },
+                      { name: "Marie Dressler", value: 2 },
+                      { name: "Mary Pickford", value: 2 },
+                      { name: "Norma Shearer", value: 2 },
+                      { name: "Walter Huston", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Mexico", value: 3, children: [
+                      { name: "Anthony Quinn", value: 2 },
+                      { name: "Lupita Nyong’o", value: 1 }
+                    ]
+                  }
+                ]
+              },
+              {
+                name: "Asia", value: 10, children: [
+                  {
+                    name: "Japan", value: 4, children: [
+                      { name: "Joan Fontaine", value: 1 },
+                      { name: "Miyoshi Umeki", value: 1 },
+                      { name: "Olivia de Havilland", value: 2 }
+                    ]
+                  },
+                  {
+                    name: "India", value: 2, children: [
+                      { name: "Julie Christie", value: 1 },
+                      { name: "Vivien Leigh", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Cambodia", value: 1, children: [
+                      { name: "Haing S. Ngor", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Israel", value: 1, children: [
+                      { name: "Natalie Portman", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "Malaysia", value: 1, children: [
+                      { name: "Michelle Yeoh", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "South Korea", value: 1, children: [
+                      { name: "Youn Yuh-jung", value: 1 }
+                    ]
+                  }
+                ]
+              },
+              {
+                name: "Oceania", value: 3, children: [
+                  {
+                    name: "Australia", value: 2, children: [
+                      { name: "Geoffrey Rush", value: 1 },
+                      { name: "Heath Ledger", value: 1 }
+                    ]
+                  },
+                  {
+                    name: "New Zealand", value: 1, children: [
+                      { name: "Russell Crowe", value: 1 }
+                    ]
+                  }
+                ]
+              },
+              {
+                name: "Africa", value: 1, children: [
+                  {
+                    name: "South Africa", value: 1, children: [
+                      { name: "Charlize Theron", value: 1 }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ];
+        // create a sunburst chart and set the data
+        var chart = anychart.sunburst(data, "as-tree");
+        // set the chart title
+        chart.title("Non-U.S. Born Oscar Winners for Acting");
+        // format the tooltip
+        chart.tooltip().useHtml(true);
+        chart.tooltip().format("<h5 style='font-size:14px; font-weight:400; margin: 0.25rem 0;'>{%name}</h5><h5 style='font-size:12px; font-weight:400; margin: 0.25rem 0;'>Total Oscars: {%value}</h5");
+        // set a custom palette
+        chart.palette(['#345E80', '#00838F', '#00BFA5', '#ff6e40', '#d4e157', '#64B5F6']);
+        // set the parent-dependent calculation mode
+        chart.calculationMode("parent-dependent");
+        // create and configure a label for the center content
+        let label = anychart.standalones.label();
+        label.text("Non-U.S. born");
+        label.width("100%");
+        label.height("100%");
+        label.fontColor("#64B5F6");
+        label.fontSize(12);
+        label.fontWeight(600);
+        label.hAlign("center");
+        label.vAlign("middle");
+        // set the center content
+        chart.center().content(label);
+        // set a space for the center content
+        chart.innerRadius(50);
+        // hide the world level
+        chart.level(0).thickness("0%");
+        // configure the label format
+        chart.labels().format("{%name}");
+        // apply the radial position
+        chart.level(2).labels().position("radial");
+        // set the ascending order
+        chart.sort("asc");
+        // set the container id
+        chart.container("container");
+        // initiate drawing the chart
+        chart.draw();
+      });
+    </script>
+  </body>
+</html>
